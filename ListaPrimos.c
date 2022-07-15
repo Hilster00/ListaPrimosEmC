@@ -24,7 +24,7 @@ void main(){
 	lista_primos[0]=2;
 	
 	//i representa a quantidade de primos encontrados, e x o valor de verificacao se e primo
-	int i=1,x=3,j,validado,quantidade_verificacos=0;
+	int i=1,x=3,j,validado,quantidade_verificacos=0,verificador=0;
 	
 	//laco que encerra assim que a lista for preenchida
 	while(i!=quantidade){
@@ -34,7 +34,7 @@ void main(){
 		
 		//percorre os elementos da lista a partir do segundo e somente até o meio dela
 		quantidade_verificacos=quantidade_verificacos+1;
-		for(j=1;j<i/2;j++){
+		for(j=1;j<=verificador;j++){
 			//verifica se o valor e divisivel por um elemento da lista
 			if(x%lista_primos[j]==0){
 				validado=0;
@@ -48,6 +48,7 @@ void main(){
 		if(validado==1){
 			//adiciona um novo primo a lista e atualiza a quantidade de primos encontrados
 			lista_primos[i]=x;
+			verificador++;
 			i++;
 		}
 		//incrementa o valor de verifica em dois para pular os pares
